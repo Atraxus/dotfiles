@@ -8,7 +8,7 @@
       "left": 3
     }
   },
-  "display": {
+    "display": {
     "separator": ": ",     // Separator between keys and values
     "color": {
         "keys": "#ea6c15",    // Key color
@@ -19,9 +19,9 @@
         "type": "string"   // string, icon, both, or none
     },
     "bar": {
-        "width": 10,       // Width of percentage bars
-        "charElapsed": "■", // Character for elapsed portion
-        "charTotal": "-"   // Character for total portion
+        "width": 10,
+        "char.elapsed": "■",
+        "char.total": "-"
     },
     "percent": {
         "type": 9,         // 1=number, 2=bar, 3=both, 9=colored number
@@ -32,20 +32,19 @@
         }
     }
   },
-  "modules": [
+"modules": [
     "title",
-    "separator",
     "os",
     "host",
     "kernel",
-    "uptime",
     "packages",
     "shell",
     "de",
     "wm",
+    "wmtheme",
+    "font",
     "terminal",
-    "cpu",
-    "gpu",
+    "terminalfont",
     "memory",
     "swap",
     "disk",

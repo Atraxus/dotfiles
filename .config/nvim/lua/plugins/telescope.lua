@@ -1,8 +1,9 @@
--- ~/.config/nvim/lua/plugins/telescope.lua
 return {
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8", -- Use the latest stable release
+    -- remove the old tag
+    -- tag = "0.1.8",
+    version = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     cmd = "Telescope",
     keys = {
@@ -10,7 +11,7 @@ return {
       { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
       { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
       { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
-      { "<leader>fG", function() require('telescope.builtin').grep_string({ search = vim.fn.expand('<cword>') }) end, desc = "Grep word under cursor" },
+      { "<leader>fG", function() require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") }) end, desc = "Grep word under cursor" },
     },
     config = function()
       require("telescope").setup({
@@ -21,7 +22,7 @@ return {
           },
           mappings = {
             i = {
-              ["<C-h>"] = "which_key", -- Show available key mappings
+              ["<C-h>"] = "which_key",
             },
           },
         },
@@ -29,4 +30,3 @@ return {
     end,
   },
 }
-

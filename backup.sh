@@ -36,7 +36,7 @@ mkdir -p "$BACKUP_DIR"
 
 for item in "${CONFIGS[@]}"; do
     SRC="$HOME/.config/$item"
-    DEST="$BACKUP_DIR/$item"
+    DEST="$BACKUP_DIR"
     if [ -e "$SRC" ]; then
         echo "Backing up $item..."
         cp -r "$SRC" "$DEST"

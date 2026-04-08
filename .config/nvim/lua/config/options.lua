@@ -1,5 +1,6 @@
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.opt.signcolumn =  "number"
 
 -- Set indentation defaults
 vim.opt.expandtab = true    -- Use spaces instead of tabs
