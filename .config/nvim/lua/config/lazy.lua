@@ -50,27 +50,11 @@ end, { desc = "Toggle distraction-free mode" })
 vim.keymap.set('n', '<leader>x', function()
   local line = vim.api.nvim_get_current_line()
   if line:match('%[ %]') then
-    vim.api.nvim_set_current_line(line:gsub('%[ %]', '[x]'))
+    vim.api.nvim_set_current_line((line:gsub('%[ %]', '[x]')))
   elseif line:match('%[x%]') then
-    vim.api.nvim_set_current_line(line:gsub('%[x%]', '[ ]'))
+    vim.api.nvim_set_current_line((line:gsub('%[x%]', '[ ]')))
   end
 end, { desc = 'Toggle checkbox' })
-
--- Automatically add bullets/checkboxes on new line
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "markdown",
-  callback = function()
-    vim.keymap.set('i', '<CR>', function()
-      local line = vim.api.nvim_get_current_line()
-      if line:match('^%s*- %[ %] ') then
-        return '<CR>- [ ] '
-      elseif line:match('^%s*- ') then
-        return '<CR>- '
-      end
-      return '<CR>'
-    end, { buffer = true, expr = true })
-  end
-})
 
 -- Setup lazy.nvim
 require("lazy").setup({
