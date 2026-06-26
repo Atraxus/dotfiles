@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "Ubuntu Nerd Font";
+    font-family: "JetBrainsMono Nerd Font";
     font-size: 18px;
     min-height: 0;
 }
@@ -12,7 +12,7 @@ window#waybar {
 }
 
 #window {
-    font-family: "Ubuntu";
+    font-family: "JetBrainsMono";
 }
 /*
 #workspaces {
@@ -24,12 +24,13 @@ window#waybar {
     padding: 0 5px;
     background: transparent;
     color: white;
+    font-weight: bold;
     border-top: 2px solid transparent;
 }
 
 #workspaces button.active {
-    color: #ea6c15;
-    border-top: 2px solid #ea6c15;
+    color: #d14eea;
+    border-top: 2px solid #d14eea;
 }
 
 #mode {

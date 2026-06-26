@@ -1,12 +1,12 @@
 return {
   "linux-cultist/venv-selector.nvim",
-  event = "VeryLazy",
+  ft = "python",
   opts = {
-    auto_refresh = true,
-    stay_on_this_version = false,
+    options = {
+      notify_user_on_venv_activation = true,
+    },
   },
   keys = {
     { "<leader>vs", "<cmd>VenvSelect<cr>", desc = "Select VirtualEnv" },
   },
 }
-

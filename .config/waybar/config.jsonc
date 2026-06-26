@@ -8,21 +8,21 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/mode",
-        "hyprland/scratchpad",
-        "custom/media"
+        "network",
+        "pulseaudio"
+        //"hyprland/mode",
+        //"hyprland/scratchpad",
+        //"custom/media"
     ],
     "modules-center": [
         "hyprland/window"
     ],
     "modules-right": [
         "tray",
-        "mpd",
+        //"mpd",
         // "idle_inhibitor",
-        "pulseaudio",
-        "network",
         "power-profiles-daemon",
-        "cpu",
+        //"cpu",
         // "memory",
         // "temperature",
         "backlight",
@@ -143,7 +143,7 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -179,7 +179,7 @@
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
