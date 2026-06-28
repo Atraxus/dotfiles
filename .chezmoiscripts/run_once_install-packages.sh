@@ -18,12 +18,11 @@ NATIVE=(
     networkmanager network-manager-applet wpa_supplicant ufw
 
     # Audio
-    pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber libpulse gst-plugin-pipewire
+    pipewire wireplumber
 
     # Hyprland stack
     hyprland hyprlock hyprpaper hyprpolkitagent hyprshot hyprshutdown uwsm
     waybar wofi dunst nwg-displays
-    grim slurp
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-utils
     qt5-wayland qt6-wayland polkit-kde-agent
 
