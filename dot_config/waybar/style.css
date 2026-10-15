@@ -1,3 +1,5 @@
+@define-color text-grey #c0c0c0;
+
 * {
     border: none;
     border-radius: 0;
@@ -8,7 +10,7 @@
 
 window#waybar {
     background: transparent;
-    color: white;
+    color: @text-grey;
 }
 
 #window {
@@ -23,7 +25,7 @@ window#waybar {
 #workspaces button {
     padding: 0 5px;
     background: transparent;
-    color: white;
+    color: @text-grey;
     font-weight: bold;
     border-top: 2px solid transparent;
 }
@@ -65,7 +67,7 @@ window#waybar {
 }
 
 #battery.warning:not(.charging) {
-    color: white;
+    color: @text-grey;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
