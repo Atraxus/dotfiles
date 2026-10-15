@@ -1,1 +1,2 @@
-source "$HOME/.cargo/env.fish"
+
+source "/home/maierj/.local/share/cargo/env.fish"

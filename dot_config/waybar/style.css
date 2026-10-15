@@ -29,8 +29,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: #d14eea;
-    border-top: 2px solid #d14eea;
+    color: #00FF88;
+    border-top: 2px solid #00FF88;
 }
 
 #mode {

@@ -1,3 +1,3 @@
-function doconf --wraps='nvim ~/.config/hypr/hyprland.conf' --description 'alias doconf=nvim ~/.config/hypr/hyprland.conf'
-    nvim ~/.config/hypr/hyprland.conf $argv
+function doconf --wraps='nvim ~/.config/hypr/hyprland.lua' --description 'alias doconf=nvim ~/.config/hypr/hyprland.lua'
+    nvim ~/.config/hypr/hyprland.lua $argv
 end

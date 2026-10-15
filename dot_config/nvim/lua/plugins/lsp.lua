@@ -3,6 +3,7 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       vim.lsp.enable('pyright')
+      vim.lsp.enable('clangd')
 
       vim.diagnostic.config({
         virtual_text = false,

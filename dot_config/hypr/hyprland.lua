@@ -35,14 +35,13 @@ local lock       = "hyprlock"
 
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 hl.on("hyprland.start", function()
+    hl.exec_cmd("dbus-update-activation-environment --systemd --all")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("waybar")
+    hl.exec_cmd("sleep 2 && nm-applet --indicator")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("udiskie")
-    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
-    hl.exec_cmd("dbus-update-activation-environment --systemd GNOME_KEYRING_CONTROL")
-    -- For dark mode (runs once at start, not on every reload like exec did)
+    -- For dark mode
     hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
     hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3'")
     hl.exec_cmd("wl-paste --watch cliphist store")
@@ -75,7 +74,7 @@ hl.config({
         gaps_out = 0,
         border_size = 2,
         col = {
-            active_border   = { colors = {"rgba(d14eeabb)", "rgba(6300ffbb)"}, angle = 45 },
+            active_border   = { colors = {"rgba(00a4ffff)", "rgba(00ff88ff)"}, angle = 45 },
             inactive_border = "rgba(595959aa)",
         },
         resize_on_border = false,
@@ -148,6 +147,7 @@ hl.config({
     misc = {
         force_default_wallpaper = 1,
         disable_hyprland_logo   = false,
+        allow_session_lock_restore = true,
     },
 })
 
@@ -199,6 +199,11 @@ hl.bind(mainMod .. " + R",         hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P",         hl.dsp.window.pseudo())
 hl.bind(shiftMod .. " + C", function()
     hl.dispatch(hl.dsp.exec_cmd("logseq-clip"))
+end)
+hl.bind(mainMod .. " + ESCAPE", function()
+    if os.execute("killall waybar") ~= 0 then
+        hl.exec_cmd("waybar")
+    end
 end)
 
 -- Move focus
@@ -258,7 +263,7 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"),   { locked = 
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),     { locked = true })
 
 -- Lock on lid open
-hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd(lock .. " --immediate"), { locked = true })
+hl.bind("switch:Lid Switch", hl.dsp.exec_cmd(lock), { locked = true })
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
