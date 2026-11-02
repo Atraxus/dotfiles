@@ -1,4 +1,12 @@
-@define-color text-grey #cccccc;
+/* Desktop palette (moon wallpaper) */
+@define-color bg        #0e002e;
+@define-color surface   #101349;
+@define-color border    #163e71;
+@define-color primary   #2cc2df;
+@define-color accent    #7cdcfb;
+@define-color text      #ccf7fd;
+@define-color text-dim  rgba(204, 247, 253, 0.55);
+@define-color warning   #e67227;
 
 * {
     border: none;
@@ -10,34 +18,29 @@
 
 window#waybar {
     background: transparent;
-    color: @text-grey;
+    color: @text;
 }
 
 #window {
     font-family: "JetBrainsMono";
 }
-/*
-#workspaces {
-    padding: 0 5px;
-}
-*/
 
 #workspaces button {
     padding: 0 5px;
     background: transparent;
-    color: @text-grey;
+    color: @text-dim;
     font-weight: bold;
     border-top: 2px solid transparent;
 }
 
 #workspaces button.active {
-    color: #00FF88;
-    border-top: 2px solid #00FF88;
+    color: @primary;
+    border-top: 2px solid @primary;
 }
 
 #mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
+    background: @surface;
+    border-bottom: 3px solid @primary;
 }
 
 #clock, #battery, #cpu, #memory, #network, #backlight, #pulseaudio, #custom-spotify, #tray, #mode {
@@ -53,21 +56,22 @@ window#waybar {
 }
 
 #battery icon {
-    color: red;
+    color: @warning;
 }
 
 #battery.charging {
+    color: @accent;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: black;
+        background-color: @warning;
+        color: @bg;
     }
 }
 
 #battery.warning:not(.charging) {
-    color: @text-grey;
+    color: @text;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -85,19 +89,20 @@ window#waybar {
 }
 
 #network.disconnected {
-    background: #f53c3c;
+    background: @warning;
+    color: @bg;
 }
 
 #pulseaudio {
 }
 
 #pulseaudio.muted {
+    color: @text-dim;
 }
 
 #custom-spotify {
-    color: rgb(102, 220, 105);
+    color: @accent;
 }
 
 #tray {
 }
-
