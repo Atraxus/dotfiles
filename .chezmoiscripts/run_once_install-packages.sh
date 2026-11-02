@@ -28,6 +28,7 @@ NATIVE=(
 
     # Display & Session
     sddm power-profiles-daemon brightnessctl
+    qt6-svg qt6-virtualkeyboard qt6-multimedia-ffmpeg
 
     # Terminal & Shell
     alacritty fish neovim fastfetch htop tree-sitter-cli
