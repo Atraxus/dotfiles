@@ -1,0 +1,50 @@
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+/* Nearly opaque: the desktop barely shows through */
+window {
+    background-color: rgba(10, 12, 16, 0.92);
+}
+
+/* Solid button colors instead of see-through ones */
+button {
+    color: #c8d3e0;
+    font-size: 32px;
+    background-color: #14181f;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    border: 2px solid #232a35;
+    border-radius: 16px;
+    margin: 24px;
+    outline-style: none;
+    transition: all 0.15s ease;
+}
+
+/* No hover effect */
+button:hover {
+    background-color: #14181f;
+    border-color: #232a35;
+}
+
+/* Selected: smaller margin = bigger button, larger icon */
+button:focus {
+    margin: 8px;
+    background-size: 30%;
+    background-color: #12293a;
+    border-color: rgba(0, 164, 255, 0.7);
+    color: rgba(0, 164, 255, 0.9);
+}
+
+button:active {
+    background-color: #113b2f;
+    border-color: rgba(0, 255, 136, 0.7);
+}
+
+#lock     { background-image: image(url("icons/lock.png")); }
+#logout   { background-image: image(url("icons/logout.png")); }
+#suspend  { background-image: image(url("icons/suspend.png")); }
+#reboot   { background-image: image(url("icons/reboot.png")); }
+#shutdown { background-image: image(url("icons/shutdown.png")); }

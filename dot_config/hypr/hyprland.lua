@@ -197,7 +197,7 @@ local ctrlMod  = "SUPER + CTRL"
 hl.bind(mainMod .. " + code:36",   hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q",         hl.dsp.window.close())
 hl.bind(mainMod .. " + M",         hl.dsp.exec_cmd(lock))
-hl.bind(shiftMod .. " + M",        hl.dsp.exit())
+hl.bind(shiftMod .. " + M",        hl.dsp.exec_cmd("wlogout -b 5"))
 hl.bind(mainMod .. " + E",         hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V",         hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F",         hl.dsp.window.fullscreen())
