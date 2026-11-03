@@ -9,7 +9,7 @@ NATIVE=(
     base base-devel sudo git wget unzip less nano vim
 
     # Kernel & Boot
-    linux linux-firmware linux-lts efibootmgr limine btrfs-progs zram-generator
+    efibootmgr limine btrfs-progs zram-generator
 
     # Intel (swap these out if you ever move to AMD)
     intel-ucode intel-media-driver libva-intel-driver vulkan-intel sof-firmware

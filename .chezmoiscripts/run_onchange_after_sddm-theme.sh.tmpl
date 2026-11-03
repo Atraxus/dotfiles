@@ -31,6 +31,7 @@ sudo cp -r "$theme/Fonts/." /usr/share/fonts/sddm-astronaut/
 sudo fc-cache -f >/dev/null
 
 # Select the variant and make it the active theme
+sudo mkdir -p /etc/sddm.conf.d
 sudo sed -i "s|^ConfigFile=.*|ConfigFile=Themes/$variant.conf|" "$theme/metadata.desktop"
 sudo tee /etc/sddm.conf.d/theme.conf >/dev/null <<EOF
 [Theme]
